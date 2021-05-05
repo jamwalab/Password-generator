@@ -1,7 +1,7 @@
 // Assignment code here
 
 //-----FUNCTION TO DETERMINE PASSWORD LENGTH
-/*var passLength = function() {
+var passLength = function() {
   var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
   console.log("Before if statements", len);
   if (len > 128 || len < 8 ) {
@@ -17,17 +17,17 @@
     console.log("After if statements", len);
     return len;
   //}
-}*/
+}
 
 //-----OBJECT FOR PASSWORD DETAILS
 var passwordDetails = {
-  length: 0,
+  length: passLength(),
   lcase: true,
   ucase: true,
   num: true,
   sChar: true,
 
-  passLength: function() {
+  /*passLength: function() {
     var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
     console.log("Before if statements", len);
     if (len > 128 || len < 8 ) {
@@ -42,7 +42,7 @@ var passwordDetails = {
       debugger;
       this.length = len;
     }
-  },
+  },*/
 
   otherDetails: function() {
     this.lcase = window.confirm("Do you want to include lower case letters?");
@@ -56,7 +56,6 @@ var passwordDetails = {
   }
 };
 
-passwordDetails.passLength();
 passwordDetails.otherDetails();
 
 console.log(passwordDetails);
