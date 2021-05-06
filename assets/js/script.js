@@ -1,7 +1,7 @@
 //-----LIST OF SPECIAL CHARACTERS
 var specialChar = "!@#$%^&*()_+~`|}{[]\\:;?'\"><,./-="
 
-//-----OBJECT FOR PASSWORD DETAILS
+//-----OBJECT FOR PASSWORD DETAIL COLLECTION
 var passwordReq = {
   length: 0,
   lcase: true,
@@ -37,14 +37,11 @@ var passLength = function() {
     window.alert("Invalid input!! Please enter a numeric value.");
     passLength();
   }
-  //---Assigns value to the length in passwordDetails
+  //---Assigns value to the length in passwordReq
   else {
     passwordDetails.length = len;
   }
 }
-
-passLength();
-passwordDetails.otherDetails();
 
 //-----RANDOM NUMBER GENERATOR
 var randomNumberGen = function(min, max) {
@@ -54,14 +51,17 @@ var randomNumberGen = function(min, max) {
 
 //-----RANDOM CHARACTER GENERATOR
 var randomCharacter = {
+  //---REFERENCE NOTE: String.fromCharCode https://stackoverflow.com/questions/40586761/how-to-generate-a-random-letter-when-clicking-a-button-in-js + MDN
   ranLCase: String.fromCharCode(randomNumber(97, 122)),
   ranUCase: String.fromCharCode(randomNumber(65, 90)),
   ranNum: String.fromCharCode(randomNumber(48, 57)),
+  //---REFERENCE NOTE: Special characters were at different locations so used string array instead.
   ranSChar: specialChar[randomNumber(0, specialChar.length - 1)]
 }
 
 var passGen = function() {
-
+  passLength();
+  passwordReq.otherDetails();
 }
 
 
@@ -77,7 +77,10 @@ var passGen = function() {
   console.log(specialChar[randomNumber(0, specialChar.length - 1)]);
 //}
 console.log(String.fromCharCode(randomNumber(97, 122)));
-console.log(passwordDetails);
+console.log(passwordReq);
+
+
+
 // Get references to the #generate element
 
 var check = [String.fromCharCode(randomNumber(97, 122)),String.fromCharCode(randomNumber(10, 22))];
