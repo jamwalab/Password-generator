@@ -1,24 +1,5 @@
 // Assignment code here
 
-//-----FUNCTION TO DETERMINE PASSWORD LENGTH
-/*var passLength = function() {
-  var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
-  console.log("Before if statements", len);
-  if (len > 128 || len < 8 ) {
-    window.alert("Invalid input!! Minimum password length is 8 and maximum 128.");
-    passLength();
-  }
-  else if (Number.isNaN(len)) {
-    window.alert("Invalid input!! Please enter a numeric value.");
-    passLength();
-  }
-  //else {
-    debugger;
-    console.log("After if statements", len);
-    return len;
-  //}
-}*/
-
 //-----OBJECT FOR PASSWORD DETAILS
 var passwordDetails = {
   length: 0,
@@ -27,7 +8,7 @@ var passwordDetails = {
   num: true,
   sChar: true,
 
-  passLength: function() {
+  /*passLength: function() {
     var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
     console.log("Before if statements", len);
     if (len > 128 || len < 8 ) {
@@ -42,8 +23,9 @@ var passwordDetails = {
       debugger;
       this.length = len;
     }
-  },
+  },*/
 
+  //---Method / function to collect password details
   otherDetails: function() {
     this.lcase = window.confirm("Do you want to include lower case letters?");
     this.ucase = window.confirm("Do you want to include upper case letters?");
@@ -56,11 +38,29 @@ var passwordDetails = {
   }
 };
 
-passwordDetails.passLength();
+//-----FUNCTION TO DETERMINE PASSWORD LENGTH
+var passLength = function() {
+  var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
+  //---Check if number is between 8 and 128
+  if (len > 128 || len < 8 ) {
+    window.alert("Invalid input!! Minimum password length is 8 and maximum 128.");
+    passLength();
+  }
+  //---Check if its anything besides number
+  else if (Number.isNaN(len)) {
+    window.alert("Invalid input!! Please enter a numeric value.");
+    passLength();
+  }
+  //---Assigns value to the length in passwordDetails
+  else {
+    passwordDetails.length = len;
+  }
+}
+
+passLength();
 passwordDetails.otherDetails();
 
 console.log(passwordDetails);
-console.log("Retuned value", passwordDetails.length);
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
