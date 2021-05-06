@@ -10,12 +10,10 @@ var passwordReq = {
   sChar: true,
   //---Method / function to collect password details
   otherDetails: function() {
-    debugger
     this.lcase = window.confirm("Do you want to include lower case letters?");
     this.ucase = window.confirm("Do you want to include upper case letters?");
     this.num = window.confirm("Do you want to include numbers?");
     this.sChar = window.confirm("Do you want to include special characters?");
-    console.log(passwordReq);
     //---OR condition is only false if all items are false, so this if statement will only run if all four cases are false
     if (!(this.lcase || this.ucase || this.num || this.sChar)) {
       window.alert("At least one option from lowercase, uppercase, numbers or special characters needs to be selected. Please try again.");
