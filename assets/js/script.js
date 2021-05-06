@@ -29,17 +29,17 @@ var passwordReq = {
 var passLength = function() {
   var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
   //---Check if number is between 8 and 128
-  if (len > 128 || len < 8 || !len) {
+  if (len > 128 || len < 8) {
     window.alert("Invalid input!! Please enter a number between 8 and 128 to meet the password requirement");
     passLength();
   }
   //---Check if its anything besides number
   //---REFERENCE NOTE: I noticed whenever I enetered anything non numeric console.log was returning NaN, did some research and found out its Not-A-Number.
   //---Found about it in MDN https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN
-  /*else if (Number.isNaN(len)) {
+  else if (Number.isNaN(len)) {
     window.alert("Invalid input!! Please enter a numeric value.");
     passLength();
-  }*/
+  }
   //---Assigns value to the length in passwordReq
   else {
     passwordReq.length = len;
