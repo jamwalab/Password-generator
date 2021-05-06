@@ -47,6 +47,8 @@ var passLength = function() {
     passLength();
   }
   //---Check if its anything besides number
+  //---REFERENCE NOTE: I noticed whenever I enetered anything non numeric console.log was returning NaN, did some research and found out its Not-A-Number.
+  //---Found about it in MDN https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN
   else if (Number.isNaN(len)) {
     window.alert("Invalid input!! Please enter a numeric value.");
     passLength();
