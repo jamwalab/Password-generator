@@ -1,29 +1,13 @@
-// Assignment code here
+//-----LIST OF SPECIAL CHARACTERS
+var specialChar = "!@#$%^&*()_+~`|}{[]\\:;?'\"><,./-="
 
 //-----OBJECT FOR PASSWORD DETAILS
-var passwordDetails = {
+var passwordReq = {
   length: 0,
   lcase: true,
   ucase: true,
   num: true,
   sChar: true,
-
-  /*passLength: function() {
-    var len = parseInt(window.prompt("Please provide the length of the password. Minimum 8 characters and maximum 128."));
-    console.log("Before if statements", len);
-    if (len > 128 || len < 8 ) {
-      window.alert("Invalid input!! Minimum password length is 8 and maximum 128.");
-      this.passLength();
-    }
-    else if (Number.isNaN(len)) {
-      window.alert("Invalid input!! Please enter a numeric value.");
-      this.passLength();
-    }
-    else {
-      debugger;
-      this.length = len;
-    }
-  },*/
 
   //---Method / function to collect password details
   otherDetails: function() {
@@ -62,8 +46,42 @@ var passLength = function() {
 passLength();
 passwordDetails.otherDetails();
 
+//-----RANDOM NUMBER GENERATOR
+var randomNumberGen = function(min, max) {
+  var value = Math.floor(Math.random()*(max - min +1) + min);
+  return value;
+}
+
+//-----RANDOM CHARACTER GENERATOR
+var randomCharacter = {
+  ranLCase: String.fromCharCode(randomNumber(97, 122)),
+  ranUCase: String.fromCharCode(randomNumber(65, 90)),
+  ranNum: String.fromCharCode(randomNumber(48, 57)),
+  ranSChar: specialChar[randomNumber(0, specialChar.length - 1)]
+}
+
+var passGen = function() {
+
+}
+
+
+
+
+
+
+
+
+
+
+//for (var i = 0; i < 100; i++) {
+  console.log(specialChar[randomNumber(0, specialChar.length - 1)]);
+//}
+console.log(String.fromCharCode(randomNumber(97, 122)));
 console.log(passwordDetails);
 // Get references to the #generate element
+
+var check = [String.fromCharCode(randomNumber(97, 122)),String.fromCharCode(randomNumber(10, 22))];
+console.log(check);
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
