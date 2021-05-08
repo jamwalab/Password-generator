@@ -1,7 +1,7 @@
 # *Password Generator*
 ## Version 1.0
 ### Built with HTML, CSS and JAVASCRIPT
-### [Link to "Password Generator" page](./index.html)
+### [Link to "Password Generator" page](https://jamwalab.github.io/Password-generator/)
 ![Preview](./assets/img/preview.gif)
 
 ### Project description
