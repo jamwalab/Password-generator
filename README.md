@@ -23,10 +23,10 @@
         * Include special characters?   
 * Random number generator for repeated use.
 * Function with switch case to generate random lowercase, uppercase, number or special character.
-* When the generate password is clicked an array is created with true or false.
+* When the generate password is clicked an array is created with true or false based on the password requirements.
 * If true the array location is stored in a call array based on the location of true cases in the previous array.
 * Location numbers on call array corresponds to the switch case for random character generators.
 * A for loop is run until the password length in reached.
-* Inside the for loop a ransom value is selected from the call array and passes as an argument to the function with switch cases.
+* Inside the for loop a random value is selected from the call array and passed as an argument to the function with switch cases.
 * Based on the switch value, random character is generated and returned.
 * Reurned value are appended to a string and password is displayed on the page.
